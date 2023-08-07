@@ -5,14 +5,30 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Exercise1Test extends Exercise1Impl {
+    Exercise1 evenOrOdd = new Exercise1Impl();
 
     @Test
-    void testFixed() {
-        Exercise1 evenOrOdd = new Exercise1Impl();
+    void testIfValueIs_EvenOrOdd() {
 
         assertEquals("Even", evenOrOdd.verify(2));
         assertEquals("Even", evenOrOdd.verify(4));
         assertEquals("Odd", evenOrOdd.verify(5));
         assertEquals("Odd", evenOrOdd.verify(7));
+
     }
+
+    @Test
+    void testIfValueIs_Negative() {
+
+        assertEquals("Negative", evenOrOdd.verify(-1));
+
+    }
+
+    @Test
+    void testIfValueIs_Null() {
+        assertThrows(NullPointerException.class, () -> {
+            evenOrOdd.verify(null);
+        });
+    }
+
 }
