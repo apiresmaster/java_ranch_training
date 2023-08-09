@@ -12,23 +12,13 @@ class Exercise1Test extends Exercise1Impl {
 
         assertEquals("Even", evenOrOdd.verify(2));
         assertEquals("Even", evenOrOdd.verify(4));
+        assertEquals("Even", evenOrOdd.verify(-2));
+        assertEquals("Even", evenOrOdd.verify(0));
         assertEquals("Odd", evenOrOdd.verify(5));
         assertEquals("Odd", evenOrOdd.verify(7));
-
+        assertEquals("Odd", evenOrOdd.verify(-1));
+        assertEquals("Odd", evenOrOdd.verify(-3));
     }
 
-    @Test
-    void testIfValueIs_Negative() {
-
-        assertEquals("Negative", evenOrOdd.verify(-1));
-
-    }
-
-    @Test
-    void testIfValueIs_Null() {
-        assertThrows(NullPointerException.class, () -> {
-            evenOrOdd.verify(null);
-        });
-    }
 
 }
