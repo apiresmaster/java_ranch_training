@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Exercise1Test extends Exercise1Impl {
+class Exercise1Test {
     Exercise1 evenOrOdd = new Exercise1Impl();
 
     @Test
@@ -20,5 +20,10 @@ class Exercise1Test extends Exercise1Impl {
         assertEquals("Odd", evenOrOdd.verify(-3));
     }
 
+    @Test
+    void testIfValueIs_Null(){
+        assertThrows(NullPointerException.class, () ->
+            evenOrOdd.verify(null));
 
+    }
 }
